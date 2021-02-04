@@ -4,7 +4,7 @@ import project_one.src.models as models
 class Scores():
 
     __table__ = 'scores'
-    columns = ['school_id', 'avg_score_sat_math','avg_score_sat_reading_writing','tot_sat_score',
+    columns = ['id','school_id','avg_score_sat_math','avg_score_sat_reading_writing','tot_sat_score',
         'graduation_rate', 'ars_english','ars_algebra']
 
     def __init__(self, **kwargs):
