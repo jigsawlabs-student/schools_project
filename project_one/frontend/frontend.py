@@ -40,22 +40,3 @@ with borough_stats:
     fig_3.add_trace(go.Histogram(histfunc="avg", x=df['borough'],y=df['graduation_rate'],marker_color= ['#6600FF','#FF0033','#CCFF00']))
     st.plotly_chart(fig_3)
 
-
-# with top_bot_5:
-#     st.title('Top Five')
-#         # st.write("Sat Scores")
-#         # fig = go.Figure()
-#         # fig.add_trace(go.Histogram(histfunc="count", x=df['borough'],marker_color=['#6600FF','#FF0033','#CCFF00']))
-#         # st.plotly_chart(fig)
-
-#         # st.write('Graduation Rate')
-#         # fig_2 = go.Figure()
-#         # fig_2.add_trace(go.Histogram(histfunc="avg",  x=df['borough'],y=df['tot_sat_score'],marker_color = ['#6600FF','#FF0033','#CCFF00']))
-#         # st.plotly_chart(fig_2)
-
-#         # st.write('Average Graduation Rate by Borough')
-#         # fig_3 = go.Figure()
-#         # fig_3.add_trace(go.Histogram(histfunc="avg", x=df['borough'],y=df['graduation_rate'],marker_color= ['#6600FF','#FF0033','#CCFF00']))
-#         # st.plotly_chart(fig_3)
-#     st.title('Bottom Five')
-
