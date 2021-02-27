@@ -36,8 +36,10 @@ class SchoolBuilder:
 
     def select_attributes(self, school_data):
           schools = []
+          # choose a better name than school data
           for d in school_data:
             if d.get('location_category_description') == 'High school':
+                # your repeating the same procedure here, so perhaps extract into a method and pass through key name as an argument.
               nyc_id,name,address = d.get('ats_system_code','').strip(),d.get('location_name',''),d.get('primary_address_line_1','').strip()
               zipcode = json.loads(d.get('location_1','')['human_address'])['zip']
               borough = json.loads(d.get('location_1','')['human_address'])['city']
@@ -79,6 +81,7 @@ class PopulationBuilder:
     def run(self, school_data, conn, cursor):
         selected = self.select_attributes(school_data,cursor)
         schools_written = []
+        # for selected_attr in selected_attrs
         for select in selected:
             school_id = select['school_id'] 
             population = models.Population.find_by_id(school_id, cursor)
@@ -137,6 +140,7 @@ class ScoresBuilder:
             if school_reference_id:
                 school_id = school_reference_id
                 avg_score_sat_math=d.get(' Average Score SAT Math','')
+                # would extract procedure for calculating total_sat_score into a function
                 avg_score_sat_reading_writing=d.get('Average Score SAT Reading and Writing','')
                 tot_sat_score = avg_score_sat_math+avg_score_sat_reading_writing
                 tot_sat_score=round(tot_sat_score,2)
